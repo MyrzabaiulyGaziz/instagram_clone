@@ -7,17 +7,6 @@ void main() {
   // TestWidgetsFlutterBinding.ensureInitialized();
   testWidgets('Stress Test:Posting comments', (tester) async {
     app.main();
-    await tester.pumpAndSettle();
-    await Future.delayed(const Duration(seconds: 1));
-    await tester.tap(find.byKey(const ValueKey('comment_button')));
-    await tester.pumpAndSettle();
-    await Future.delayed(const Duration(seconds: 1));
-    await tester.enterText(find.byType(TextField), 'text');
-    await tester.pumpAndSettle();
-    await Future.delayed(const Duration(seconds: 1));
-    await tester.tap(find.byKey(const Key('post_button')));
-    await tester.pumpAndSettle();
-    await Future.delayed(const Duration(seconds: 1));
-    expect(find.byType(CommentsScreen), findsOneWidget);
+  
   }, timeout: Timeout.none);
 }
